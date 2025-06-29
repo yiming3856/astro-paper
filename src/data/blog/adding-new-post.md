@@ -1,249 +1,46 @@
 ---
-author: Sat Naing
-pubDatetime: 2022-09-23T15:22:00Z
-modDatetime: 2025-06-13T16:52:45.934Z
-title: Adding new posts in AstroPaper theme
-slug: adding-new-posts-in-astropaper-theme
-featured: true
-draft: false
-tags:
-  - docs
-description:
-  Some rules & recommendations for creating or adding new posts using AstroPaper
-  theme.
+title: "建站虚拟主机的隐性成本有哪些？"
+description: "查看主机商网站上的主机套餐时很容易知晓每个不同的套餐计划对应的价格。正因为如此，我们很容易认为这个价格就是要付出的全部成本"
+pubDatetime: 2025-06-27T12:00:00Z
+author: "作者"
+tags: ["随笔" "生活"]
 ---
+导致隐性成本产生的最常见原因是主机套餐价格发生变化，这在廉价的网站主机商中尤其常见。
 
-Here are some rules/recommendations, tips & ticks for creating new posts in AstroPaper blog theme.
+许多价格便宜的虚拟主机会提供新客促销价格，仅适用于首个计费周期（根据主机的不同，从一年到三年不等），或者说首购优惠期。如果你一次性选择购买三年，那么首购优惠期锁定三年，这三年内的价格一直锁定为折扣优惠价。
 
-<figure>
-  <img
-    src="https://images.pexels.com/photos/159618/still-life-school-retro-ink-159618.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    alt="Free Classic wooden desk with writing materials, vintage clock, and a leather bag. Stock Photo"
-  />
-    <figcaption class="text-center">
-    Photo by <a href="https://www.pexels.com/photo/brown-wooden-desk-159618/">Pixabay</a>
-  </figcaption>
-</figure>
+很多虚拟主机上都是这样以折扣低价的首购价格吸引新客户，占领市场份额。SiteGround、Bluehost、FastComet、 等虚拟主机都是这样。
 
-## Table of contents
+当你的首购优惠期到期，要开始以主机的正常价格续费时，主机正常价格普遍比首购期优惠价格高约 4-5 倍。很多虚拟主机用户因此接受不了，有些用户会找寻其它新的虚拟主机服务商，把网站迁移过去，享受新的虚拟主机服务商的首购期新客优惠价。
 
-## Creating a Blog Post
+如果你对虚拟主机的选择的第一原则是便宜，那么你需要确保在做出购买决定时，应该明确地知道首购期的优惠促销价格和过了优惠期的正常价格。否则，当你去续费虚拟主机时，你可能会对价格涨了 4-5 倍感到意外和一时无法接受。
 
-To write a new blog post, create a markdown file inside the `src/data/blog/` directory.
+其实，在你购买套餐时，对应的主机套餐都会标注原价或正常价格是多少，只是由于折扣优惠价格做了视觉强调的设计，你并没有关注到这个主机套餐的正常价格。通常会显示 "Regular" 或 "Normally" 字样，或者是一个带有删除线的价格。这个大家都懂，就是代表原价，现在提供折扣了，突出折扣价，淡化原价或者说正价。
 
-> Prior to AstroPaper v5.1.0, all blog posts had to be in `src/data/blog/`, meaning you couldn't organize them into subdirectories.
+不仅仅是廉价的主机会提供首购折扣优惠，之前文章也说过，主机商普遍都会采用一开始低价折扣吸引和锁定新用户，并尽量争取在折扣价锁定期内，用服务和品质赢得客户信赖，并想办法留存客户获得客户续费使用。这个过程就好比用一个底部有洞的漏斗从池子里往桶里舀水，主机商最后赚的是留存客户的长期价值，而折扣期结束恢复正价后仍留存的客户才是长期价值客户。
 
-Starting from AstroPaper v5.1.0, you can now organize blog posts into subdirectories, making it easier to manage your content.
+注意首购优惠折扣的计费期限。通常，你需要预先支付长期费用才能获得最低的折扣价格。对于虚拟主机来说，通常是 3 年；而对于更高级的网站主机类型，通常只有 1 年。
 
-For example, if you want to group posts under `2025`, you can place them in `src/data/blog/2025/`. This also affects the post URL, so `src/data/blog/2025/example-post.md` will be available at `/posts/2025/example-post`.
+附加组件或服务需额外付费带来的成本变化
+除了主机套餐价格变化之外，产生隐性成本的另一个因素是用户可能需要为除了网站主机之外的附加组件或服务而额外付费。
 
-If you don’t want subdirectories to affect the post URL, just prefix the folder name with an underscore `_`.
+有些主机服务商会向你收取一些额外的费用，常见的有：
 
-```bash
-# Example: blog post structure and URLs
-src/data/blog/very-first-post.md          -> mysite.com/posts/very-first-post
-src/data/blog/2025/example-post.md        -> mysite.com/posts/2025/example-post
-src/data/blog/_2026/another-post.md       -> mysite.com/posts/another-post
-src/data/blog/docs/_legacy/how-to.md      -> mysite.com/posts/docs/how-to
-src/data/blog/Example Dir/Dummy Post.md   -> mysite.com/posts/example-dir/dummy-post
-```
+SSL 证书 - 虽然许多主机商现在提供免费的 SSL 证书，但你仍然会发现一些所谓的“受欢迎的主机”对 SSL 证书收费。
+另外，如果你需要一个泛域名 SSL 证书 (即支持任意二级域名 *.yourdomain.com )，则大多数虚拟主机服务商都会额外收费。因为他们提供的 SSL 证书是基础的 SSL 证书，不支持泛域名 (wildcard)
+备份 (Backup) – 许多虚拟主机商会收取额外费用来备份你的网站。
+虽然现在已经有 N 多免费好用的 WordPress 网站备份插件，但很多建站新手并不知道，可能在支付主机套餐订购时选择额外备份服务。
+安全性 – 某些虚拟主机商提供安全防范增值服务，对安全防火墙功能或恶意软件扫描收取额外费用。
+比如 SiteGround 就提供每日网站检测扫描的服务，检查网站是否被黑客入侵或被注入恶意破坏代码。费用是 19.80 美金每年。
+CDN – 使用内容分发网络（CDN）是加速 WordPress 网站的好方法之一。但是，有些主机商会向你收取额外费用才能使用 CDN。
+这样的话，你使用主机的同时还需要支付 CDN 的相关费用。其实，这也不是什么大问题。只要你学会了建站，你的选择可以很自由。
+你还可以选择不用主机商提供的 CDN 服务，自己付费使用第三方 CDN 服务付费。
+上面的这些服务中，备份尤其要引起重视。虽然使用 WordPress 可以自主进行网站备份和自动备份计划，但仍然存在一些不便。比如：
 
-> 💡 Tip: You can override a blog post’s slug in the frontmatter as well. See the next section for more details.
+如果你的网站出现一些奇怪的小毛病故障无法排除，但此时仍然可以正常登入网站后台，那么不要紧，通过在后台操作使用备份插件的还原功能，把最近一次备份的网站文件和数据库进行还原，即可还原到出现问题之前的状态。但万一你的网站出现严重故障，无法登入网站操作后台，此时你无法使用备份软件进行网站还原，那操作就挺麻烦的。
 
-If the subdirectory URL doesn’t appear in the build output, remove node_modules, reinstall packages, and then rebuild.
+你需要通过 FTP 下载类的工具，进入网站文件目录下找到备份插件保存的文件目录，把备份的网站文件和数据库的压缩包文件下载下来，然后再通过数据库管理工具如 phpMyAdmin 这类的工具把数据库还原，再把备份的网站文件上传，通过这样手动操作的方式来恢复到备份时的网站状态。
 
-## Frontmatter
+整个过程会稍微有点麻烦，客户支付服务方面好的虚拟主机服务商会帮助做一些恢复备份的网站操作，但如果虚拟主机商不帮你需要你自己去手动操作，流程是稍微麻烦一些。
 
-Frontmatter is the main place to store some important information about the blog post (article). Frontmatter lies at the top of the article and is written in YAML format. Read more about frontmatter and its usage in [astro documentation](https://docs.astro.build/en/guides/markdown-content/).
-
-Here is the list of frontmatter property for each post.
-
-| Property           | Description                                                                                                                           | Remark                                         |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
-| **_title_**        | Title of the post. (h1)                                                                                                               | required<sup>\*</sup>                          |
-| **_description_**  | Description of the post. Used in post excerpt and site description of the post.                                                       | required<sup>\*</sup>                          |
-| **_pubDatetime_**  | Published datetime in ISO 8601 format.                                                                                                | required<sup>\*</sup>                          |
-| **_modDatetime_**  | Modified datetime in ISO 8601 format. (only add this property when a blog post is modified)                                           | optional                                       |
-| **_author_**       | Author of the post.                                                                                                                   | default = SITE.author                          |
-| **_slug_**         | Slug for the post. This field is optional.                                                                                            | default = slugified file name                  |
-| **_featured_**     | Whether or not display this post in featured section of home page                                                                     | default = false                                |
-| **_draft_**        | Mark this post 'unpublished'.                                                                                                         | default = false                                |
-| **_tags_**         | Related keywords for this post. Written in array yaml format.                                                                         | default = others                               |
-| **_ogImage_**      | OG image of the post. Useful for social media sharing and SEO. This can be a remote URL or an image path relative to current folder.  | default = `SITE.ogImage` or generated OG image |
-| **_canonicalURL_** | Canonical URL (absolute), in case the article already exists on other source.                                                         | default = `Astro.site` + `Astro.url.pathname`  |
-| **_hideEditPost_** | Hide editPost button under blog title. This applies only to the current blog post.                                                    | default = false                                |
-| **_timezone_**     | Specify a timezone in IANA format for the current blog post. This will override the `SITE.timezone` config for the current blog post. | default = `SITE.timezone`                      |
-
-> Tip! You can get ISO 8601 datetime by running `new Date().toISOString()` in the console. Make sure you remove quotes though.
-
-Only `title`, `description` and `pubDatetime` fields in frontmatter must be specified.
-
-Title and description (excerpt) are important for search engine optimization (SEO) and thus AstroPaper encourages to include these in blog posts.
-
-`slug` is the unique identifier of the url. Thus, `slug` must be unique and different from other posts. The whitespace of `slug` should to be separated with `-` or `_` but `-` is recommended. Slug is automatically generated using the blog post file name. However, you can define your `slug` as a frontmatter in your blog post.
-
-For example, if the blog file name is `adding-new-post.md` and you don't specify the slug in your frontmatter, Astro will automatically create a slug for the blog post using the file name. Thus, the slug will be `adding-new-post`. But if you specify the `slug` in the frontmatter, this will override the default slug. You can read more about this in [Astro Docs](https://docs.astro.build/en/guides/content-collections/#defining-custom-slugs).
-
-If you omit `tags` in a blog post (in other words, if no tag is specified), the default tag `others` will be used as a tag for that post. You can set the default tag in the `content.config.ts` file.
-
-```ts file="src/content.config.ts"
-export const blogSchema = z.object({
-  // ...
-  draft: z.boolean().optional(),
-  // [!code highlight:1]
-  tags: z.array(z.string()).default(["others"]), // replace "others" with whatever you want
-  // ...
-});
-```
-
-### Sample Frontmatter
-
-Here is the sample frontmatter for a post.
-
-```yaml file="src/data/blog/sample-post.md"
----
-title: The title of the post
-author: your name
-pubDatetime: 2022-09-21T05:17:19Z
-slug: the-title-of-the-post
-featured: true
-draft: false
-tags:
-  - some
-  - example
-  - tags
-ogImage: ../../assets/images/example.png # src/assets/images/example.png
-# ogImage: "https://example.org/remote-image.png" # remote URL
-description: This is the example description of the example post.
-canonicalURL: https://example.org/my-article-was-already-posted-here
----
-```
-
-## Adding table of contents
-
-By default, a post (article) does not include any table of contents (toc). To include toc, you have to specify it in a specific way.
-
-Write `Table of contents` in h2 format (## in markdown) and place it where you want it to be appeared on the post.
-
-For instance, if you want to place your table of contents just under the intro paragraph (like I usually do), you can do that in the following way.
-
-<!-- prettier-ignore-start -->
-```md
----
-# frontmatter
----
-
-Here are some recommendations, tips & ticks for creating new posts in AstroPaper blog theme.
-
-<!-- [!code ++] -->
-## Table of contents
-
-<!-- the rest of the post -->
-```
-<!-- prettier-ignore-end -->
-
-## Headings
-
-There's one thing to note about headings. The AstroPaper blog posts use title (title in the frontmatter) as the main heading of the post. Therefore, the rest of the heading in the post should be using h2 \~ h6.
-
-This rule is not mandatory, but highly recommended for visual, accessibility and SEO purposes.
-
-## Syntax Highlighting
-
-AstroPaper uses [Shiki](https://shiki.style/) as the default syntax highlighting. Starting from AstroPaper v5.4, [@shikijs/transformers](https://shiki.style/packages/transformers) is used to enhance better fenced code blocks. If you don't want to use it, you can simply remove it like this
-
-```bash
-pnpm remove @shikijs/transformers
-```
-
-```js file="astro.config.ts"
-// ...
-// [!code --:5]
-import {
-  transformerNotationDiff,
-  transformerNotationHighlight,
-  transformerNotationWordHighlight,
-} from "@shikijs/transformers";
-
-export default defineConfig({
-  // ...
-  markdown: {
-    remarkPlugins: [remarkToc, [remarkCollapse, { test: "Table of contents" }]],
-    shikiConfig: {
-      // For more themes, visit https://shiki.style/themes
-      themes: { light: "min-light", dark: "night-owl" },
-      defaultColor: false,
-      wrap: false,
-      transformers: [
-        transformerFileName(),
-      // [!code --:3]
-        transformerNotationHighlight(),
-        transformerNotationWordHighlight(),
-        transformerNotationDiff({ matchAlgorithm: "v3" }),
-      ],
-    },
-  },
-  // ...
-}
-```
-
-## Storing Images for Blog Content
-
-Here are two methods for storing images and displaying them inside a markdown file.
-
-> Note! If it's a requirement to style optimized images in markdown you should [use MDX](https://docs.astro.build/en/guides/images/#images-in-mdx-files).
-
-### Inside `src/assets/` directory (recommended)
-
-You can store images inside `src/assets/` directory. These images will be automatically optimized by Astro through [Image Service API](https://docs.astro.build/en/reference/image-service-reference/).
-
-You can use relative path or alias path (`@/assets/`) to serve these images.
-
-Example: Suppose you want to display `example.jpg` whose path is `/src/assets/images/example.jpg`.
-
-```md
-![something](@/assets/images/example.jpg)
-
-<!-- OR -->
-
-![something](../../assets/images/example.jpg)
-
-<!-- Using img tag or Image component won't work ❌ -->
-<img src="@/assets/images/example.jpg" alt="something">
-<!-- ^^ This is wrong -->
-```
-
-> Technically, you can store images inside any directory under `src`. In here, `src/assets` is just a recommendation.
-
-### Inside `public` directory
-
-You can store images inside the `public` directory. Keep in mind that images stored in the `public` directory remain untouched by Astro, meaning they will be unoptimized and you need to handle image optimization by yourself.
-
-For these images, you should use an absolute path; and these images can be displayed using [markdown annotation](https://www.markdownguide.org/basic-syntax/#images-1) or [HTML img tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img).
-
-Example: Assume `example.jpg` is located at `/public/assets/images/example.jpg`.
-
-```md
-![something](/assets/images/example.jpg)
-
-<!-- OR -->
-
-<img src="/assets/images/example.jpg" alt="something">
-```
-
-## Bonus
-
-### Image compression
-
-When you put images in the blog post (especially for images under `public` directory), it is recommended that the image is compressed. This will affect the overall performance of the website.
-
-My recommendation for image compression sites.
-
-- [TinyPng](https://tinypng.com/)
-- [TinyJPG](https://tinyjpg.com/)
-
-### OG Image
-
-The default OG image will be placed if a post does not specify the OG image. Though not required, OG image related to the post should be specify in the frontmatter. The recommended size for OG image is **_1200 X 640_** px.
-
-> Since AstroPaper v1.4.0, OG images will be generated automatically if not specified. Check out [the announcement](https://astro-paper.pages.dev/posts/dynamic-og-image-generation-in-astropaper-blog-posts/).
+所以说，如果主机商有帮你备份网站的服务，那就十分方便了。你无需登录到网站后台下，即可直接还原所备份的网站。
