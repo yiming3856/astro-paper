@@ -1,156 +1,48 @@
 ---
-author: Alberto Perdomo
+author: 建站虚拟主机的隐性成本有哪些
 pubDatetime: 2024-09-08T20:58:52.737Z
 modDatetime: 2025-03-22T09:25:46.734Z
-title: How to add LaTeX Equations in Astro blog posts
+title: 当你查看主机商网站上的主机套餐时很容易知晓每个不同的套餐计划对应的价格。正因为如此，我们很容易认为这个价格就是要付出的全部成本
 tags:
   - docs
 description: Learn how to add LaTeX equations in Astro blog posts using Markdown, KaTeX, and remark/rehype plugins.
 ---
+导致隐性成本产生的最常见原因是主机套餐价格发生变化，这在廉价的网站主机商中尤其常见。
 
-This document demonstrates how to use LaTeX equations in your Markdown files for AstroPaper. LaTeX is a powerful typesetting system often used for mathematical and scientific documents.
+许多价格便宜的虚拟主机会提供新客促销价格，仅适用于首个计费周期（根据主机的不同，从一年到三年不等），或者说首购优惠期。如果你一次性选择购买三年，那么首购优惠期锁定三年，这三年内的价格一直锁定为折扣优惠价。
 
-<figure>
-  <img
-    src="https://images.pexels.com/photos/22690748/pexels-photo-22690748/free-photo-of-close-up-of-complicated-equations-written-on-a-blackboard.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-    alt="Free Close-up of complex equations on a chalkboard, showcasing chemistry and math symbols. Stock Photo"
-  />
-  <figcaption class="text-center">
-    Photo by <a href="https://www.pexels.com/photo/close-up-of-complicated-equations-written-on-a-blackboard-22690748/">Vitaly Gariev</a>
-  </figcaption>
-</figure>
+很多虚拟主机上都是这样以折扣低价的首购价格吸引新客户，占领市场份额。SiteGround、Bluehost、FastComet、 等虚拟主机都是这样。
 
-## Table of contents
+当你的首购优惠期到期，要开始以主机的正常价格续费时，主机正常价格普遍比首购期优惠价格高约 4-5 倍。很多虚拟主机用户因此接受不了，有些用户会找寻其它新的虚拟主机服务商，把网站迁移过去，享受新的虚拟主机服务商的首购期新客优惠价。
 
-## Instructions
+如果你对虚拟主机的选择的第一原则是便宜，那么你需要确保在做出购买决定时，应该明确地知道首购期的优惠促销价格和过了优惠期的正常价格。否则，当你去续费虚拟主机时，你可能会对价格涨了 4-5 倍感到意外和一时无法接受。
 
-In this section, you will find instructions on how to add support for LaTeX in your Markdown files for AstroPaper.
+其实，在你购买套餐时，对应的主机套餐都会标注原价或正常价格是多少，只是由于折扣优惠价格做了视觉强调的设计，你并没有关注到这个主机套餐的正常价格。通常会显示 "Regular" 或 "Normally" 字样，或者是一个带有删除线的价格。这个大家都懂，就是代表原价，现在提供折扣了，突出折扣价，淡化原价或者说正价。
 
-1. Install the necessary remark and rehype plugins by running:
+不仅仅是廉价的主机会提供首购折扣优惠，之前文章也说过，主机商普遍都会采用一开始低价折扣吸引和锁定新用户，并尽量争取在折扣价锁定期内，用服务和品质赢得客户信赖，并想办法留存客户获得客户续费使用。这个过程就好比用一个底部有洞的漏斗从池子里往桶里舀水，主机商最后赚的是留存客户的长期价值，而折扣期结束恢复正价后仍留存的客户才是长期价值客户。
 
-   ```bash
-   pnpm install rehype-katex remark-math katex
-   ```
+注意首购优惠折扣的计费期限。通常，你需要预先支付长期费用才能获得最低的折扣价格。对于虚拟主机来说，通常是 3 年；而对于更高级的网站主机类型，通常只有 1 年。
 
-2. Update the Astro configuration to use the these plugins:
+附加组件或服务需额外付费带来的成本变化
+除了主机套餐价格变化之外，产生隐性成本的另一个因素是用户可能需要为除了网站主机之外的附加组件或服务而额外付费。
 
-   ```ts file=astro.config.ts
-   // ...
-   import remarkMath from "remark-math";
-   import rehypeKatex from "rehype-katex";
+有些主机服务商会向你收取一些额外的费用，常见的有：
 
-   export default defineConfig({
-     // ...
-     markdown: {
-       remarkPlugins: [
-         remarkMath, // [!code ++]
-         remarkToc,
-         [remarkCollapse, { test: "Table of contents" }],
-       ],
-       rehypePlugins: [rehypeKatex], // [!code ++]
-       shikiConfig: {
-         // For more themes, visit https://shiki.style/themes
-         themes: { light: "min-light", dark: "night-owl" },
-         wrap: false,
-       },
-     },
-     // ...
-   });
-   ```
+SSL 证书 - 虽然许多主机商现在提供免费的 SSL 证书，但你仍然会发现一些所谓的“受欢迎的主机”对 SSL 证书收费。
+另外，如果你需要一个泛域名 SSL 证书 (即支持任意二级域名 *.yourdomain.com )，则大多数虚拟主机服务商都会额外收费。因为他们提供的 SSL 证书是基础的 SSL 证书，不支持泛域名 (wildcard)
+备份 (Backup) – 许多虚拟主机商会收取额外费用来备份你的网站。
+虽然现在已经有 N 多免费好用的 WordPress 网站备份插件，但很多建站新手并不知道，可能在支付主机套餐订购时选择额外备份服务。
+安全性 – 某些虚拟主机商提供安全防范增值服务，对安全防火墙功能或恶意软件扫描收取额外费用。
+比如 SiteGround 就提供每日网站检测扫描的服务，检查网站是否被黑客入侵或被注入恶意破坏代码。费用是 19.80 美金每年。
+CDN – 使用内容分发网络（CDN）是加速 WordPress 网站的好方法之一。但是，有些主机商会向你收取额外费用才能使用 CDN。
+这样的话，你使用主机的同时还需要支付 CDN 的相关费用。其实，这也不是什么大问题。只要你学会了建站，你的选择可以很自由。
+你还可以选择不用主机商提供的 CDN 服务，自己付费使用第三方 CDN 服务付费。
+上面的这些服务中，备份尤其要引起重视。虽然使用 WordPress 可以自主进行网站备份和自动备份计划，但仍然存在一些不便。比如：
 
-3. Import KaTeX CSS in the main layout file
+如果你的网站出现一些奇怪的小毛病故障无法排除，但此时仍然可以正常登入网站后台，那么不要紧，通过在后台操作使用备份插件的还原功能，把最近一次备份的网站文件和数据库进行还原，即可还原到出现问题之前的状态。但万一你的网站出现严重故障，无法登入网站操作后台，此时你无法使用备份软件进行网站还原，那操作就挺麻烦的。
 
-   ```astro file=src/layouts/Layout.astro
-   ---
-   import { SITE } from "@config";
+你需要通过 FTP 下载类的工具，进入网站文件目录下找到备份插件保存的文件目录，把备份的网站文件和数据库的压缩包文件下载下来，然后再通过数据库管理工具如 phpMyAdmin 这类的工具把数据库还原，再把备份的网站文件上传，通过这样手动操作的方式来恢复到备份时的网站状态。
 
-   // astro code
-   ---
+整个过程会稍微有点麻烦，客户支付服务方面好的虚拟主机服务商会帮助做一些恢复备份的网站操作，但如果虚拟主机商不帮你需要你自己去手动操作，流程是稍微麻烦一些。
 
-   <!doctype html>
-   <!-- others... -->
-   <script is:inline src="/toggle-theme.js"></script>
-
-   <!-- [!code highlight:4] -->
-   <link
-     rel="stylesheet"
-     href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
-   />
-
-   <body>
-     <slot />
-   </body>
-   ```
-
-4. As the last step, add a text-color for `katex` in `typography.css`.
-
-   ```css file=src/styles/typography.css
-   @plugin '@tailwindcss/typography';
-
-   @layer base {
-     /* other classes */
-
-     /* Katex text color */
-     /* [!code highlight:3] */
-     .prose .katex-display {
-       @apply text-foreground;
-     }
-
-     /* ===== Code Blocks & Syntax Highlighting ===== */
-     /* other classes */
-   }
-   ```
-
-And _voilà_, this setup allows you to write LaTeX equations in your Markdown files, which will be rendered properly when the site is built. Once you do it, the rest of the document will appear rendered correctly.
-
----
-
-## Inline Equations
-
-Inline equations are written between single dollar signs `$...$`. Here are some examples:
-
-1. The famous mass-energy equivalence formula: `$E = mc^2$`
-2. The quadratic formula: `$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$`
-3. Euler's identity: `$e^{i\pi} + 1 = 0$`
-
----
-
-## Block Equations
-
-For more complex equations or when you want the equation to be displayed on its own line, use double dollar signs `$$...$$`:
-
-The Gaussian integral:
-
-```bash
-$$ \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi} $$
-```
-
-The definition of the Riemann zeta function:
-
-```bash
-$$ \zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s} $$
-```
-
-Maxwell's equations in differential form:
-
-```bash
-$$
-\begin{aligned}
-\nabla \cdot \mathbf{E} &= \frac{\rho}{\varepsilon_0} \\
-\nabla \cdot \mathbf{B} &= 0 \\
-\nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t} \\
-\nabla \times \mathbf{B} &= \mu_0\left(\mathbf{J} + \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}\right)
-\end{aligned}
-$$
-```
-
----
-
-## Using Mathematical Symbols
-
-LaTeX provides a wide range of mathematical symbols:
-
-- Greek letters: `$\alpha$`, `$\beta$`, `$\gamma$`, `$\delta$`, `$\epsilon$`, `$\pi$`
-- Operators: `$\sum$`, `$\prod$`, `$\int$`, `$\partial$`, `$\nabla$`
-- Relations: `$\leq$`, `$\geq$`, `$\approx$`, `$\sim$`, `$\propto$`
-- Logical symbols: `$\forall$`, `$\exists$`, `$\neg$`, `$\wedge$`, `$\vee$`
+所以说，如果主机商有帮你备份网站的服务，那就十分方便了。你无需登录到网站后台下，即可直接还原所备份的网站。
