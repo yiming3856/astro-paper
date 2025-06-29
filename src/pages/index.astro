@@ -47,14 +47,6 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
         欢迎来到我的个人博客，在这个博客中，我将写下我的项目（我做什么/我如何做）、我的个人经历以及一些随机的东西⭐
       </p>
 
-      {
-        SOCIALS.length > 0 && (
-          <div class="mt-4 flex flex-col sm:flex-row sm:items-center">
-            <div class="me-2 mb-1 whitespace-nowrap sm:mb-0">社交链接：</div>
-            <Socials />
-          </div>
-        )
-      }
     </section>
 
     <Hr />
