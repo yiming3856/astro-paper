@@ -1,11 +1,15 @@
 ---
-author: 建站虚拟主机的隐性成本有哪些
-pubDatetime: 2024-09-08T20:58:52.737Z
-modDatetime: 2025-03-22T09:25:46.734Z
-title: 当你查看主机商网站上的主机套餐时很容易知晓每个不同的套餐计划对应的价格。正因为如此，我们很容易认为这个价格就是要付出的全部成本
+author: Sat Naing
+pubDatetime: 2022-09-23T04:58:53Z
+modDatetime: 2025-03-20T03:15:57.792Z
+title: 建站虚拟主机的隐性成本有哪些
+slug: 查看主机商网站上的主机套餐时很容易知晓每个不同的套餐计划对应的价格。正因为如此，我们很容易认为这个价格就是要付出的全部成本。
+featured: true
+draft: false
 tags:
+  - configuration
   - docs
-description: Learn how to add LaTeX equations in Astro blog posts using Markdown, KaTeX, and remark/rehype plugins.
+description: How you can make AstroPaper theme absolutely yours.
 ---
 导致隐性成本产生的最常见原因是主机套餐价格发生变化，这在廉价的网站主机商中尤其常见。
 
