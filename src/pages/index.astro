@@ -52,7 +52,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
     {
       recentPosts.length > 0 && (
         <section id="recent-posts" class="pt-12 pb-6">
-          <h2 class="text-3xl font-semibold tracking-wide mb-6">最近发布</h2>
+          <h2 class="text-3xl font-semibold tracking-wide mb-6">最新发布</h2>
           <ul class="space-y-8">
             {recentPosts.map(
               (data, index) =>
