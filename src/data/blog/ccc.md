@@ -1,5 +1,5 @@
 ---
-title: "VPS搭建WordPress"
+title: "VPS搭建WordPress📌"
 description: "仅仅在漆黑的屏幕上敲几行代码就能把一个网站玩的风生水起很了不得，感觉有点黑客大神的气派。而那时我才刚刚开始研究独立博客和虚拟主机，还是个只知道使用简单办公软件的上班族"
 pubDatetime: 2025-06-27T12:00:00Z
 author: "作者"
